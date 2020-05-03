@@ -3,13 +3,24 @@
 let level = 11 
 let score = 0
 
-const display = document.querySelector("#display")
-const levelDisplay = document.querySelector("#level")
-const start = document.querySelector("#start")
-const squares = document.querySelectorAll('.square')
-const resultdisplay = document.querySelector("#resultdisplay")
-const resultdiv = document.querySelector(".result-div")
-const imgdisplay = document.querySelector("#imgdisplay")
+
+var display = document.querySelector("#display")
+var levelDisplay = document.querySelector("#level")
+var start = document.querySelector("#start")
+var squares = document.querySelectorAll('.square')
+var resultdisplay = document.querySelector("#resultdisplay")
+var resultdiv = document.querySelector(".result-div")
+var imgdisplay = document.querySelector("#imgdisplay")
+var step = 1
+var voice1 = document.createElement("audio");
+var voice2 = document.createElement("audio");
+var voice3 = document.createElement("audio");
+var voice4 = document.createElement("audio");
+  voice1.src = "game.m4a";
+  voice2.src = "win.m4a";
+  voice3.src = "beginwin.m4a";
+  voice4.src = "finalwin.m4a";
+
 
 window.addEventListener("load",init())
 
@@ -30,24 +41,24 @@ function init() {
 
 function adjustColor(level) {
     
-	if(window.r > 255 - (level*3)){
+	if(window.r > 255 - (level * step)){
 
-		   window.ar = window.r - (level*3);}
+		   window.ar = window.r - (level * step);}
 		   else{
-		    	window.ar = window.r + (level*3)}
+		    	window.ar = window.r + (level * step)}
 
-		   if(window.g > 255 - (level*3)){
+		   if(window.g > 255 - (level * step)){
 
-		   window.ag = window.r - (level*3);}
+		   window.ag = window.r - (level * step);}
 		   else{
-		    	window.ag = window.g + (level*3)}
+		    	window.ag = window.g + (level * step)}
 
 
-		   if(window.b > 255 - (level*3)){
+		   if(window.b > 255 - (level * step)){
 
-		   window.ab = window.b - (level*3);}
+		   window.ab = window.b - (level * step);}
 		   else{
-		    	window.ab = window.b + (level*3)}
+		    	window.ab = window.b + (level * step)}
 
 		 return "rgb(" + window.ar + ", " + window.ag + ", " + window.ab + ")";		
            
@@ -77,6 +88,7 @@ function compareColor(){
 		squares[i].addEventListener("click",function(){
 			
 			if(this.style.backgroundColor === window.targetColor){
+			voice1.play()
 				
 			//for the check purpose: console.log(this.style.backgroundColor,  this.style.backgroundColor === window.targetColor)
 			score++
@@ -157,35 +169,42 @@ function reset(){
 
 
 function result(){
+
 	if(score === 0 ){
+		voice3.play()
 		resultdisplay.innerHTML = "You must mis-clicked something! Play again!"
 	}
 
 	else if(score === 1){
+		voice3.play()
 
 		resultdisplay.innerHTML = "Hmmmm, wanna try again? "
 		
 	}
 
 	else if(score === 2){
+			voice3.play()
 
 		resultdisplay.innerHTML = "Level 3 is not bad. Better than level 2 ~  "
 		
 	}
 
 	else if(score === 3){
+		voice3.play()
 
 		resultdisplay.innerHTML = "Level 4 is not bad. Better than level 3 ~ "
 		
 	}
 
 	else if(score === 4){
+			voice2.play()
 
 		resultdisplay.innerHTML = "Oh-oh, you only beat 30% people. "
 		
 	}
 
    else if(score === 5){
+   		voice2.play()
 
 		resultdisplay.innerHTML = "You've beat 50% people!"
 		
@@ -193,6 +212,7 @@ function result(){
 
 
    else if(score === 6){
+   		voice2.play()
 
 		resultdisplay.innerHTML = "You've beat 60% people!"
 		
@@ -200,6 +220,7 @@ function result(){
 
 
 	 else if(score === 7){
+	 		voice2.play()
 
 		resultdisplay.innerHTML = "You are on the top of 80%! "
 		
@@ -207,18 +228,21 @@ function result(){
 
 
 	 else if(score === 8){
+	 		voice2.play()
 
 		resultdisplay.innerHTML = "You almost reached Yanyan's level!! "
 		
 	}
 
 	 else if(score === 9){
+	 		   voice4.play()
 
 		resultdisplay.innerHTML = "Congrats! You've reached the same level of Yanyan now!!  "
 		
 	}
 
 	 else if(score === 10){
+	 		voice4.play()
 
 		resultdisplay.innerHTML = "Congrats!! You beat Yanyan!! But there is another higer level! Wanna try again?  "
 		
@@ -226,6 +250,7 @@ function result(){
     
 
     else if(score === 11){
+         voice4.play()
 
 		resultdisplay.innerHTML = "Winner!! Your eyes' have extraordinary color sense!!!! "
 		
