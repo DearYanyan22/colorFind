@@ -30,24 +30,24 @@ function init() {
 
 function adjustColor(level) {
     
-	if(window.r > 255 - (level*5)){
+	if(window.r > 255 - (level*3)){
 
-		   window.ar = window.r - (level*5);}
+		   window.ar = window.r - (level*3);}
 		   else{
-		    	window.ar = window.r + (level*5)}
+		    	window.ar = window.r + (level*3)}
 
-		   if(window.g > 255 - (level*5)){
+		   if(window.g > 255 - (level*3)){
 
-		   window.ag = window.r - (level*5);}
+		   window.ag = window.r - (level*3);}
 		   else{
-		    	window.ag = window.g + (level*5)}
+		    	window.ag = window.g + (level*3)}
 
 
-		   if(window.b > 255 - (level*5)){
+		   if(window.b > 255 - (level*3)){
 
-		   window.ab = window.b - (level*5);}
+		   window.ab = window.b - (level*3);}
 		   else{
-		    	window.ab = window.b + (level*5)}
+		    	window.ab = window.b + (level*3)}
 
 		 return "rgb(" + window.ar + ", " + window.ag + ", " + window.ab + ")";		
            
