@@ -8,7 +8,7 @@
   <style type="text/css">
 
   	.square{
-	padding:27px 37px;
+	  padding:25px 37px;
     cursor: pointer;
     transition: background 1s;
 	-webkit-transition: background 1s;
@@ -17,49 +17,82 @@
     border-radius: 12px;
 
 }
+.mode{
+  background-color: #AACDD0; border: none;color:#595959
+}
+
+ .mode:hover{
+
+  border-bottom: 2px solid #ED7D31;
+
+ }
+
+ .modeClicked{
+
+   border-bottom: 2px solid #ED7D31;
+   color:black;
+
+ }
 
 
   </style>
 </head>
 <body style="margin:0; padding: 0;font-family: Courier New">
- <section class="container my-0 pt-3  pb-5" style="background-color: #AACDD0;min-height: 100vh; ">
+ <section class="container my-0 pt-3  pb-0" style="background-color: #AACDD0;min-height: 50vh; ">
  	  <div class="container ">
 		<div class="row ml-2 mt-4">
-		<div class="col-4 d-flex justify-content-start ">
+		<div class="col-6 d-flex justify-content-start ">
 			<h5 >Level <span>  </span> <span id="level" >  </span></h5>  
 			
 		</div>
+    <div class="col-6 d-flex justify-content-end text-right ">
+      <h5 >Score<span>  </span> <span id="scoreDisplay" >  </span></h5>  
+      
+    </div>
 	</div>
 
 	</div>
 	
 	<div class="row justify-content-center mt-3 ">
 		<div class="col-10 text-center ">
-			<h2 id= "start" >Color Find</h2>
-			<p style="color:#595959">Test your eyes' recognition of colors.	</p>
+			<h1 id= "start" >Color Find</h1>
+			<p><i>Test your eyes' recognition of colors</i></p>
 			
 
 			
 		</div>
 	</div>
+<hr>
 
-	<hr class="mt-2 pt-0">
+  <div class=" row  justify-content-center mt-3  ">
+     <div class= "col-4 text-right">
+      <button class="mode" >Heaven Mode</button>
+       
+     </div>
+      <div class= "col-4 text-center">
+        <button class="mode" >Normal Mode</button>
+       
+     </div>
+      <div class= "col-4 text-left">
+        <button class="mode">Hell Mode</button>
+       
+     </div>
 
-	<div class="row justify-content-center mt-4" >
-		<div class="col-4 d-flex justify-content-center">
-			<span  id="display">Ready? Go!</span>
-		</div>
-		
-	</div>
+    
+  </div>
 
-<div class="container result-div mt-5 " style="display: none">
+	
+
+	
+
+<div class="container result-div mt-5 pt-5 " style="display: none">
 	
 	
 
-	<div class="row justify-content-center mt-3 ">
+	<div class="row justify-content-center mt-5 ">
 		<div class="col-12 d-flex justify-content-center text-center">
-			<h3 style=
-			"color:white; font-family:Lucida Console"" id="resultdisplay"></h3>
+			<h4 style=
+			"color:white; font-family:Lucida Console" id="resultdisplay" ></h4>
 			
 		</div>
 		
@@ -74,6 +107,16 @@
 		
 	</div>
 </div>
+
+<div class="container row justify-content-center mt-5 pt-5 " id="begindisplay" style="color:white"> 
+
+
+
+ <div class="col-12 d-flex justify-content-center text-center mt-5"> 
+  
+    <h5 >Choose one mode to start...</h5>
+   </div>
+ </div>
 
   <section class="square-section mt-5 pt-3 container pb-5 mb-0" >
   	<div class="row square-row text-center justify-content-center"  >
@@ -248,18 +291,25 @@
   		</div>
   	</div>
 
+    <div class="row justify-content-center mt-5 pt-4" >
+    <div class="col-4 d-flex justify-content-center">
+      <span  id="display"></span>
+    </div>
+    
+  </div>
+
   
   	
   </section>
-  <div class="row justify-content-end pt-5 m">
-  	<div class="col-5 text-right">
+  <div class="row justify-content-end mb-0 pb-0" >
+  	<div class="col-7 text-right mb-0 pb-0">
   		Power by @Dearyanyan
   		
   	</div>
   </div>
  </section>
 	
-  <script src="index.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 </html>
